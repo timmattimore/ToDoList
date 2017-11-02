@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body ng-app="myApp">
+
+      <div ng-controller="MainCtrl">
+          
+          <h1>Weekly Tasks</h1>
+
+            <ul ng-repeat="chores in toDo">
+              <li>{{chores.day | uppercase}} {{chores.task}}</li>
+            </ul>
+
+            <form ng-submit="addToDo()">
+              <input ng-model="newTask" type="text" placeholder="New Chore" /><br>
+              <input ng-model="newDay" type="text" placeholder="Day of the Week" /><br>
+              <button type="submit">Add to list</button>
+            </form>
+     
+      </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="main.controller.js"></script>
+
+  </body>
+</html>
+
+    <!-- <div ng-controller="MainCtrl">
+      
+      <h1>Weekly Tasks</h1>
+        <ul>
+          <li ng-repeat="chores in toDo">{{chores.day | uppercase}} {{chores.task}}</li>
+        </ul>
+        <form>
+            <input ng-model="newTask" type="text" placeholder="New Chore"/><br>
+            <input ng-model="newDay" type="text" placeholder="Day of Week"/><br>
+            <button ng-click="addtoDo()">Add to list</button>
+            <br>
+         </form>
+
+
+    </div> -->
